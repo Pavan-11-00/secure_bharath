@@ -465,17 +465,65 @@ img, svg { display: block; max-width: 100%; }
   animation: arc-dash 2s ease-out forwards;
 }
 
+/* ─── Responsive ──────────────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
 }
+
 @media (max-width: 600px) {
-  .grid-3, .grid-4, .grid-2, .grid-auto { grid-template-columns: 1fr; }
-  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  :root {
+    --nav-height: 60px;
+  }
+  
   .container { padding: 0 16px; }
-  .section { padding: 40px 0; }
-  .page-header { padding: 32px 0 20px; }
+  
+  /* Typography */
+  .page-header h1 { font-size: 1.8rem; }
+  .page-header p { font-size: 0.95rem; }
+  
+  /* Grid System */
+  .grid-2, .grid-3, .grid-4, .grid-auto { 
+    grid-template-columns: 1fr; 
+    gap: 16px;
+  }
+  
+  .stat-grid { 
+    grid-template-columns: 1fr 1fr; 
+    gap: 12px;
+  }
+
+  /* Components */
+  .card { padding: 20px; border-radius: var(--radius-md); }
+  .btn { padding: 10px 18px; width: 100%; justify-content: center; }
+  .btn-sm { width: auto; }
+  
+  .stat-card { padding: 15px; }
+  .stat-value { font-size: 1.6rem; }
+
+  /* Mobile Nav Polish */
+  .mobile-nav {
+    padding: 20px;
+    gap: 10px;
+  }
+  
+  /* Form Polish */
   .input-group { flex-direction: column; }
-  .tabs { flex-wrap: wrap; }
+  
+  /* Section Padding */
+  .section { padding: 32px 0; }
+  .section-sm { padding: 24px 0; }
+  
+  /* Result Panels */
+  .result-panel { padding: 20px; }
+  .result-title { font-size: 1.2rem; }
+  .score-circle { width: 110px; height: 110px; }
+  .score-circle .score-num { font-size: 1.8rem; }
+}
+
+/* Specific fix for small phones */
+@media (max-width: 380px) {
+  .stat-grid { grid-template-columns: 1fr; }
+  .page-header h1 { font-size: 1.6rem; }
 }
 
