@@ -72,7 +72,8 @@ export default function SMSDetector({ addPoints, addToast }) {
     setProgressMsg(t('scanner.progress.ai'));
     
     try {
-      const aiResponse = await fetch('http://localhost:5000/api/ai/analyze-sms', {
+      const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const aiResponse = await fetch(`${apiBase}/api/ai/analyze-sms`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ text: sms })

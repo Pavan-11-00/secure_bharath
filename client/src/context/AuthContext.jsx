@@ -30,7 +30,7 @@ export function AuthProvider({ children }) {
   const [points, setPoints] = useState(0);
   const [levelProgress, setLevelProgress] = useState({});
 
-  const API_URL = 'http://localhost:5000';
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
   // Sync user data with backend
   async function syncUserData(data = {}) {

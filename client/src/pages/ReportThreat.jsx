@@ -26,7 +26,7 @@ export default function ReportThreat({ addPoints, addToast }) {
   const [reports, setReports] = useState(() => JSON.parse(localStorage.getItem('csb_reports') || '[]'));
   const [showHistory, setShowHistory] = useState(false);
 
-  const API_URL = 'http://localhost:5000';
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
   const set = (k, v) => setForm(f => ({ ...f, [k]: v }));
 

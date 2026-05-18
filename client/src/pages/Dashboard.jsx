@@ -6,7 +6,7 @@ import {
 } from 'recharts';
 import { Activity, Shield, Users, AlertTriangle, CheckCircle, Server, Zap, Clock, Globe } from 'lucide-react';
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = (import.meta.env.VITE_API_URL || 'http://localhost:5000') + '/api';
 
 const CustomTooltip = ({ active, payload, label }) => {
   if (!active || !payload?.length) return null;

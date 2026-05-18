@@ -34,7 +34,7 @@ export default function Home({ addPoints }) {
   const { t } = useTranslation();
   const [liveThreats, setLiveThreats] = useState([]);
   const [threatStats, setThreatStats] = useState(null);
-  const API_URL = 'http://localhost:5000';
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
   const stats = [
     { label: t('home.stats.scanned'), value: 142830, suffix: '+', color: 'var(--color-cyan)' },

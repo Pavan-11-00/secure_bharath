@@ -7,7 +7,7 @@ const SUSPICIOUS_KEYWORDS = ['secure', 'verify', 'update', 'login', 'account', '
 const PHISHING_PATTERNS = ['sbi', 'hdfc', 'icici', 'axis', 'paytm', 'phonepe', 'gpay', 'uidai', 'aadhaar', 'incometax', 'npci', 'upi', 'irctc'];
 const KNOWN_MALICIOUS_TLDS = ['.xyz', '.top', '.click', '.loan', '.online', '.site', '.work', '.tech', '.buzz', '.monster'];
 
-const BACKEND_URL = 'http://localhost:5000';
+const BACKEND_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 function analyzeUrl(raw, t) {
   const url = raw.trim().toLowerCase();
